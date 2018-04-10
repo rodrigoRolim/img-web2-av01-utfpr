@@ -21,9 +21,9 @@ public class Conexao {
 
  	 //creating connection with the database 
          Connection con=DriverManager.getConnection
-                        ("jdbc:mysql:/ /localhost:3306/test","root","studytonight");
+                        ("jdbc:mysql:/ /localhost:3306/avaliacao_bd","root","utfpr");
          PreparedStatement ps =con.prepareStatement
-                             ("select * from register where email=? and pass=?");
+                             ("select * from avaliacao_bd.cliente where email=? and senha=?");
          ps.setString(1, email);
          ps.setString(2, pass);
          ResultSet rs =ps.executeQuery();
