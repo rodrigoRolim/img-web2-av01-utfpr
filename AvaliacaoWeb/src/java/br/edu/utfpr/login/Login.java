@@ -8,6 +8,8 @@ package br.edu.utfpr.login;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+<<<<<<< HEAD
+=======
 import java.sql.*;
 import br.edu.utfpr.connect.Conexao;
 import java.io.IOException;
@@ -16,6 +18,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+>>>>>>> ed8073fffbf59ed45b58aba8da5fd42bec904cfa
 
 /**
  *
@@ -23,6 +26,17 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Login extends HttpServlet {
 
+<<<<<<< HEAD
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doGet(req, resp); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+ 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+=======
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -85,6 +99,7 @@ public class Login extends HttpServlet {
     }// </editor-fold>
     
      protected void doPost(HttpServletRequest request, HttpServletResponse response)
+>>>>>>> ed8073fffbf59ed45b58aba8da5fd42bec904cfa
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -96,6 +111,7 @@ public class Login extends HttpServlet {
         {
             RequestDispatcher rs = request.getRequestDispatcher("home");
             rs.forward(request, response);
+            response.sendRedirect("/admin");
         }
         else
         {
