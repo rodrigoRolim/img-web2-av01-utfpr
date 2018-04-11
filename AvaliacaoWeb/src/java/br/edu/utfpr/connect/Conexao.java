@@ -21,13 +21,19 @@ public class Conexao {
 
  	 //creating connection with the database 
          Connection con=DriverManager.getConnection
-                        ("jdbc:mysql:/ /localhost:3306/avaliacao_bd","root","utfpr");
+                           ("jdbc:mysql://localhost:3306/avaliacao_bd?zeroDateTimeBehavior=convertToNull","root","utfpr");
+                       // ("jdbc:mysql://localhost:3306/avaliacao_bd","root","utfpr");
+         
+         
          PreparedStatement ps =con.prepareStatement
-                             ("select * from avaliacao_bd.cliente where email=? and senha=?");
+                             ("select * from avaliacao_bd.cliente where nome=? and senha=?");
          ps.setString(1, email);
          ps.setString(2, pass);
          ResultSet rs =ps.executeQuery();
+         
          st = rs.next();
+         System.err.println(st);
+         System.err.println(rs);
         
       }catch(Exception e)
       {
